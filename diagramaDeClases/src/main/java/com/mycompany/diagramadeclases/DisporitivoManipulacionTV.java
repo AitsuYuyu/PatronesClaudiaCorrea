@@ -10,6 +10,94 @@ Debe aplicarse factory method (creo yo xdd)
 * 
  */
 abstract class DisporitivoManipulacionTV {
+    private String botones;
+    private String control;
+    private String viaWifi;
+    private String entradas;
+
+    public DisporitivoManipulacionTV() {
+    }
+    public DisporitivoManipulacionTV(String botones, String control, String viaWifi, String entradas){
+        this.botones = botones;
+        this.control = control;
+        this.viaWifi = viaWifi;
+        this.entradas = entradas;
+        
+        
+    }
+
+    public void setEntradas(String entradas) {
+        this.entradas = entradas;
+    }
+
+    public String getEntradas() {
+        return entradas;
+    }
+    public String getBotones() {
+        return botones;
+    }
+
+    public void setBotones(String botones) {
+        this.botones = botones;
+    }
+
+    public String getControl() {
+        return control;
+    }
+
+    public void setControl(String control) {
+        this.control = control;
+    }
+
+    public String getViaWifi() {
+        return viaWifi;
+    }
+
+    public void setViaWifi(String viaWifi) {
+        this.viaWifi = viaWifi;
+    }
+
+    @Override
+    public String toString() {
+        return "DisporitivoManipulacionTV{" + "botones=" + botones + ", control=" + control + ", viaWifi=" + viaWifi + ", entradas=" + entradas + '}';
+    }
+    
+    public class PanelTv extends DisporitivoManipulacionTV{
+
+        public PanelTv() {
+        }
+        
+        public PanelTv(String botones, String control, String viaWifi, String entradas){
+super (botones, control, viaWifi, entradas);
+        
+        
+    }
+
+        @Override
+        public String toString() {
+            return "PanelTv{" + '}';
+        }
+
+    }
+    
+    public class ControlInfrarojo extends DisporitivoManipulacionTV{
+
+        public ControlInfrarojo() {
+        }
+                public ControlInfrarojo(String botones, String control, String viaWifi, String entradas){
+super (botones, control, viaWifi, entradas);
+        
+        
+    }
+
+        @Override
+        public String toString() {
+            return "ControlInfrarojo{" + '}';
+        }
+
+        
+    }
+    
     interface Dispositivo{
         void encender();
         void apagar();
